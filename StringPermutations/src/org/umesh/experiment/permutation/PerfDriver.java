@@ -6,6 +6,7 @@ public class PerfDriver {
 		PermutationMethod pm1 = new SimpleRecursionBased();
 		PermutationMethod pm2 = new RecursionOptimized();
 		PermutationMethod pm3 = new SimpleRecursionMultithreaded();
+		PermutationMethod pm4 = new SimpleIterationBased();
 
 		String[] testCases = { "potato" , "potato23", "potato2323" ,"potato23232334"};
 
@@ -14,6 +15,7 @@ public class PerfDriver {
 			pm1.generatePerms(str);
 			pm2.generatePerms(str);
 			pm3.generatePerms(str);
+			pm4.generatePerms(str);
 		}
 	}
 

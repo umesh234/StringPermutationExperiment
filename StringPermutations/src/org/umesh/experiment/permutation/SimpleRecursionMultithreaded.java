@@ -14,7 +14,7 @@ public class SimpleRecursionMultithreaded extends PermutationMethod{
 		final ExecutorService es = Executors.newFixedThreadPool(100);
 		printPermsHelper3("" , str, es);
 		es.shutdown();
-		while(!es.isShutdown() ) {
+		while(!es.isTerminated()) {
 			try {
 				es.awaitTermination(1, TimeUnit.SECONDS);
 			} catch (InterruptedException e) {
@@ -22,7 +22,6 @@ public class SimpleRecursionMultithreaded extends PermutationMethod{
 				e.printStackTrace();
 			}
 		}
-		es.shutdownNow();
 	}
 	
 	public void printPermsHelper3(String prefix , String remain, final ExecutorService es) {
